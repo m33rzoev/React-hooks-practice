@@ -8,6 +8,7 @@ import PrevStateExample from "../components/examples/useRef/prevState";
 import ProgrammableActionsExample from "../components/examples/useRef/programmableActions";
 import RenderCountExample from "../components/examples/useRef/renderCount";
 import UseRefExercise from "../components/exercises/useRefExercise";
+import TaskUseRef from "../components/examples/useRef/taskUseRef";
 const UseRefExample = () => {
     return (
         <>
@@ -38,6 +39,9 @@ const UseRefExample = () => {
             <div>
                 <Subtitle>Упражнения</Subtitle>
                 <UseRefExercise />
+            </div>
+            <div>
+                <TaskUseRef />
             </div>
         </>
     );
