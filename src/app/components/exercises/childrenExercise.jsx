@@ -11,15 +11,27 @@ const ChildrenExercise = () => {
                 <code>React.Children.toArray</code>
             </p>
 
-            <Component />
-            <Component />
-            <Component />
+            <ComponentList>
+                <Component />
+                <Component />
+                <Component />
+            </ComponentList>
         </CollapseWrapper>
     );
 };
 
-const Component = () => {
-    return <div>Компонент списка</div>;
+const ComponentList = ({ children }) => {
+    const arrayOfChildren = React.Children.toArray(children);
+    return React.Children.map(arrayOfChildren, (child) =>
+        React.cloneElement(child, {
+            ...child.props,
+            num: +child.key.replace(".", "") + 1
+        })
+    );
+};
+// eslint-disable-next-line react/prop-types
+const Component = ({ num }) => {
+    return <div>{num} Компонент списка</div>;
 };
 
 export default ChildrenExercise;
